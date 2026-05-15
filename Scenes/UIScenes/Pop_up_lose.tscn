@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Fonts/kfn_40_o1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/Buttons/button_rectangle_depth_gradient.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Buttons/button_rectangle_depth_flat.png" type="Texture" id=3]
+
+[node name="Pop_up_lose" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MainMenu" type="TextureButton" parent="."]
+margin_left = 540.0
+margin_top = 465.0
+margin_right = 800.0
+margin_bottom = 537.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="MainMenu"]
+margin_left = 17.0
+margin_top = 11.0
+margin_right = 246.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 1 )
+text = "Main Menu"
+align = 1
+
+[node name="Restart" type="TextureButton" parent="."]
+margin_left = 541.0
+margin_top = 371.0
+margin_right = 798.0
+margin_bottom = 439.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="Restart"]
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 262.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 1 )
+text = "Restart"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 567.0
+margin_top = 205.0
+margin_right = 786.0
+margin_bottom = 271.0
+custom_fonts/font = ExtResource( 1 )
+text = "Defeated"
+uppercase = true
