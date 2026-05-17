@@ -132,7 +132,14 @@ func _process(delta):
 func _unhandled_input(event):
 	if event.is_action_released("ui_cancel") and build_mode == true:
 		cancel_build_mode()
-	if event.is_action_released("ui_accept") and build_mode == true:
+		
+	# โค้ดเดิมของคอม: กด Enter / Spacebar
+	var pc_confirm = event.is_action_released("ui_accept")
+	
+	# โค้ดสำหรับมือถือ: ถ้านิ้วจิ้มลงบนจอในโหมดสร้าง และตำแหน่งนั้นสร้างได้ (build_valid)
+	var mobile_confirm = event is InputEventScreenTouch and event.pressed and build_valid
+	
+	if (pc_confirm or mobile_confirm) and build_mode == true:
 		verify_and_build()
 		cancel_build_mode()
 
