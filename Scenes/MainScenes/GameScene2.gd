@@ -132,7 +132,9 @@ func _process(delta):
 func _unhandled_input(event):
 	if event.is_action_released("ui_cancel") and build_mode == true:
 		cancel_build_mode()
-	if event.is_action_released("ui_accept") and build_mode == true:
+	var pc_confirm = event.is_action_released("ui_accept")
+	var mobile_confirm = event is InputEventScreenTouch and event.pressed and build_valid
+	if (pc_confirm or mobile_confirm) and build_mode == true:
 		verify_and_build()
 		cancel_build_mode()
 
